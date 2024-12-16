@@ -193,7 +193,7 @@ const SignUp = () => {
           sx={{
             fontSize: { xs: '1.2rem', md: '2rem', },
             fontWeight: { xs: 'bold', md: 'bold' },
-            color: '#1D4C6A'
+            color: '#1D4C6A', marginTop: '0.5rem'
           }}
         >
           Create an Account :)
