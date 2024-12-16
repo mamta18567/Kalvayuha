@@ -17,7 +17,7 @@ const NavBar = () => {
   const user = useSelector((state) => state.user.user);
 
   const NavContent = () => (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding:'1rem 2rem' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '1rem 2rem' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
         <FontAwesomeIcon sx={{ paddingBottom: '0.5rem', fontSize: '3rem' }} icon={faLeaf} size="2x" color='#1D4C6A' />
         <Typography variant="h4" sx={{ fontWeight: 'bold' }} className='heading-text' gutterBottom paddingTop={1}>
@@ -45,13 +45,18 @@ const NavBar = () => {
   );
 
   return (
-    <Stack className='container' direction={{ xs: 'column', md: 'row' }} height="100vh" style={{backgroundColor: '#E2E5EC'}}>
+    <Stack className='container' direction={{ xs: 'column', md: 'row' }} height="100vh" style={{ backgroundColor: '#E2E5EC' }}>
       {isMobile ? (
-        <Box style={{backgroundColor: '#E2E5EC'}}>
+        <Box style={{ backgroundColor: '#E2E5EC' }}>
           <IconButton sx={{ position: 'absolute', top: '1rem', left: '1rem' }} onClick={() => setIsDrawerOpen(true)}>
             <MenuIcon />
           </IconButton>
-          <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+          <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} sx={{
+            '& .MuiDrawer-paper': {
+              width: '75vw',
+              maxWidth: '300px',
+            },
+          }}>
             {NavContent()}
           </Drawer>
         </Box>

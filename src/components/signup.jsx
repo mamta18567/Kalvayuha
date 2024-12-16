@@ -186,10 +186,23 @@ const SignUp = () => {
   return (
     <Stack className="container" direction={{ xs: 'column', md: 'row' }} height="100vh">
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ pt: 2 }} className="right-container">
-        <Typography variant="h5" textAlign="center" gutterBottom className="heading-text">
+        <Typography
+          variant="subtitle1"
+          textAlign="center"
+          gutterBottom
+          sx={{
+            fontSize: { xs: '1.2rem', md: '2rem', },
+            fontWeight: { xs: 'bold', md: 'bold' },
+            color: '#1D4C6A'
+          }}
+        >
           Create an Account :)
         </Typography>
-        <Typography variant="subtitle1" textAlign="center" gutterBottom className="text">
+        <Typography
+          sx={{
+            fontSize: { xs: '0.8rem', md: '1rem', },
+          }}
+          variant="subtitle1" textAlign="center" gutterBottom className="text">
           Let’s get started with your 90 days free trial
         </Typography>
         <Stack spacing={2} className="form">
@@ -239,7 +252,7 @@ const SignUp = () => {
                     }}
                     required={formConfig[field].required}
                   />
-                  <Typography sx={{fontSize: '12px', marginTop: '0.2rem'}}> We will send you a verification OTP on <Typography sx={{fontSize: '12px', fontWeight: 'bold'}} variant='subtitle-1'>+91 - - - - - - - - - -</Typography></Typography>
+                  <Typography sx={{ fontSize: '12px', marginTop: '0.2rem' }}> We will send you a verification OTP on <Typography sx={{ fontSize: '12px', fontWeight: 'bold' }} variant='subtitle-1'>+91 - - - - - - - - - -</Typography></Typography>
                   {state.errors[field] && (
                     <Typography
                       sx={{
