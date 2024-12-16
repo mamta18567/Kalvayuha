@@ -66,13 +66,11 @@ const OtpVerification = () => {
     return null;
   }
 
-  const validateOTP = () => {
-    const isValid = otp.every((digit) => /^\d$/.test(digit)) && otp.length === 6 && !otp.includes('');
+  const validateOTP = (currentOtp) => {
+    const isValid = currentOtp.every((digit) => /^\d$/.test(digit)) && currentOtp.length === 6 && !currentOtp.includes('');
     dispatchForm({ type: 'SET_VALIDITY', isValid });
   };
-
-
-
+  
 
   const handleOTPChange = (e, index) => {
     const otpValue = e.target.value;
@@ -87,6 +85,7 @@ const OtpVerification = () => {
     if (/^\d$/.test(otpValue)) {
       newOtp[index] = otpValue;
       setOtp(newOtp);
+      validateOTP(newOtp)
 
       if (index < otp.length - 1) {
         document.getElementById(`otp-input-${index + 1}`).focus();
@@ -106,6 +105,7 @@ const OtpVerification = () => {
     if (/^[0-9]*$/.test(pastedData)) {
       const newOtp = pastedData.split('').concat(Array(otp.length - pastedData.length).fill(''));
       setOtp(newOtp);
+      validateOTP(newOtp)
     }
   };
 

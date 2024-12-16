@@ -16,7 +16,7 @@ const MainRoutes = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <div className='flex-box'>
+    <div className='flex-box' style={{gap: '10px'}}>
       <div style={{ width: isMobile ? '0%' : '30%' }}>
         <NavBar />
       </div>
