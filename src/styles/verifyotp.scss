@@ -3,12 +3,12 @@
     padding: 2rem;
     margin: auto;
 
-    .otp-digits{
-      gap: 1rem;
+    .otp-digits {
+      gap: 0.7rem;
       padding-bottom: 1.5rem;
     }
 
-    .otp-input{
+    .otp-input {
       width: 45px;
       height: 50px;
       text-align: center;
@@ -17,9 +17,24 @@
       border-radius: 5px;
       margin-bottom: 4rem;
     }
-    .start-text{
+
+    .start-text {
       text-align: center;
       margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .otp-container {
+      padding: 1rem;
+
+    }
+  }
+
+  @media (max-width: 480px) {
+    .otp-container {
+      padding: 0.2rem;
+
     }
   }
 }
