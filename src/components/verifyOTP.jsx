@@ -147,6 +147,7 @@ const OtpVerification = () => {
                 id={`otp-input-${index}`}
                 type="text"
                 value={digit}
+                placeholder='-'
                 onChange={(e) => handleOTPChange(e, index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 onPaste={handlePaste}
